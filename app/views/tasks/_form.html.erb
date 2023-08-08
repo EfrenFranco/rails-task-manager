@@ -1,0 +1,17 @@
+<% @task.errors.full_messages.each do |msg| %>
+  <p class='text-danger'><%= msg %></p>
+<% end %>
+<!-- <form action="/restaurants" method="post">
+  </form> -->
+<!-- form_with is expecting an instance -->
+<!-- form_with builds the path and method for us -->
+<%= form_with model: @task do |t| %>
+  <!-- <input type="text" name="name"> -->
+  <%= t.label :title %>
+  <%= t.text_field :title, class: 'form-control' %>
+  <%= t.label :details %>
+  <%= t.text_field :details, class: 'form-control' %>
+  <%= t.label :completed %>
+  <%= t.text_field :completed, class: 'form-control' %>
+  <%= t.submit class: 'btn btn-primary mt-2' %>
+<% end %>
